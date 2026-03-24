@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlackMarvy Media Sign Up</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      min-height: 100vh;
+    }
+
+    section {
+      background: #fff;
+      width: 40%;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    h4 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: gray;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: blue;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .signup-btn {
+      background: blue;
+      color: white;
+    }
+
+    .signup-btn:hover {
+      background: darkblue;
+    }
+
+    .signin-btn {
+      background: gray;
+      color: white;
+      margin-top: 10px;
+    }
+
+    .signin-btn:hover {
+      background: darkgray;
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      section {
+        width: 95%;
+        padding: 20px;
+      }
+    }
+
+    /* Tablet */
+    @media (max-width: 768px) {
+      section {
+        width: 70%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section>
+  <h2>Welcome to BlackMarvy Media</h2>
+  <h4>Please sign up</h4>
+
+  <form onsubmit="return login()">
+
+    <div class="input-group">
+      <label>First Name</label>
+      <input type="text" class="firstname" required />
+    </div>
+
+    <div class="input-group">
+      <label>Middle Name</label>
+      <input type="text" class="middle-name" required />
+    </div>
+
+    <div class="input-group">
+      <label>Last Name</label>
+      <input type="text" class="last-name" required />
+    </div>
+
+    <div class="input-group">
+      <label>Date of Birth</label>
+      <input type="date" class="dob" required />
+    </div>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" class="email" required />
+    </div>
+
+    <div class="input-group">
+      <label>Username</label>
+      <input type="text" class="username" required />
+    </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" class="password" required />
+    </div>
+
+    <div class="input-group">
+      <label>Verify Password</label>
+      <input type="password" class="verify-password" required />
+    </div>
+
+    <button type="submit" class="signup-btn">Sign Up</button>
+    <button type="button" class="signin-btn" onclick="window.location.href='index-2.html'">Sign In</button>
+
+  </form>
+</section>
+
+<script>
+function login() {
+  let firstname = document.querySelector(".firstname").value;
+  let middlename = document.querySelector(".middle-name").value;
+  let lastname = document.querySelector(".last-name").value;
+  let username = document.querySelector(".username").value;
+  let password = document.querySelector(".password").value;
+  let verify = document.querySelector(".verify-password").value;
+
+  if (password !== verify) {
+    alert("Passwords do not match");
+    return false;
+  }
+
+  localStorage.setItem("username", username);
+  localStorage.setItem("password", password);
+
+  alert(firstname + " " + middlename + " " + lastname + " account created");
+
+  window.location.href = "index-2.html";
+  return false;
+}
+</script>
+
+</body>
+</html>
