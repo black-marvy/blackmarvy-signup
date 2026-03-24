@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blackmarvy media</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    
+    }
+    div h4 {
+        font-size: 1.3rem;
+    }
+
+    form {
+      text-align: center;
+      width: 30%;
+      margin-left: 40%;
+      margin-top: 2%;
+      background-color: rgb(173, 164, 164);
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .username {
+      width: 80%;
+      height: 5vh;
+      border: none;
+      color: black;
+      border-radius: 3px;
+    }
+
+     .password {
+      width: 80%;
+      height: 5vh;
+      border: none;
+      color: black;
+      border-radius: 3px;
+    }
+    label{
+      margin-left: -60%;
+      position: relative;
+      color: whitesmoke;
+    }
+
+    .btn{
+      border: none;
+      height: 6vh;
+      width: 25%;
+      border-radius: 20px;
+      color: rgb(228, 176, 176);
+      cursor: pointer;
+
+    }
+     .btns{
+      border: none;
+      height: 6vh;
+      width: 50%;
+      border-radius: 20px;
+      color: rgb(55, 54, 54);
+      cursor: pointer;
+
+    }
+    .signup{
+      line-height: -2;
+    }
+    .signup h6{
+      font-size: .7rem;
+    }
+
+    @media screen and (max-width: 420px) {
+      
+      form{
+        width: 100%;
+        border-radius: 0;
+        margin: 0%;
+        margin-top: 0%;
+      }
+       section{ 
+        margin-top: 0;
+        background-color: black;
+        
+       } 
+
+      .signin{
+          margin-top: 30%;
+          
+      }
+    }
+
+  </style>
+
+  <body>
+     <section>
+    <form onsubmit="login (); return false;">
+    <div>
+        <h4>BlackMarvy media</h4>
+        <h5>please login your details</h5>
+      </div>
+
+        <div class="signin">
+      <br /><br />
+      <label for=""> Username: <br>
+      <input type="text" class="username" placeholder="Enter Username" />
+       </label>
+      <br /><br /> <br><br>
+
+      <label for=""> password: <br>
+      <input type="password" class="password" placeholder="Enter password" />
+      </label>
+      <br /><br /> 
+      <button type = "button" class="btn" onclick="login()">Sign in</button>
+
+         </div>
+
+      <br /><br /><br />
+
+      <div class="signup">
+        
+      <h6>Dont have an account?</h6>
+       <button >  <a href="sign_up.html">sign up</a></button>
+      <br /><br />
+      </div>
+    </form>
+    </section>
+
+
+    <script>
+     function login (){
+      let storedUser = localStorage.getItem("username")
+      let storedPass = localStorage.getItem("password")
+
+      let inputUser = document.querySelector(".username").value;
+      let inputPass = document.querySelector(".password").value;
+
+      if(storedUser === inputUser && storedPass === inputPass)
+          alert("successful login")
+        else{
+          alert("incorrect Username and password")
+        }
+      
+ }
+    </script>
+  </body>
+</html>
